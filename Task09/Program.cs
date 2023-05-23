@@ -12,3 +12,14 @@ if (firstDigit > secondDigit)
     Console.WriteLine($"Наибольшая цифра числа -> {firstDigit}");
 else
     Console.WriteLine($"Наибольшая цифра числа -> {secondDigit}");
+
+int maxDigit = MaxDigit(number);
+Console.WriteLine($"Наибольшая цифра числа -> {maxDigit}");
+
+int MaxDigit(int num) // num = number
+{
+    int firstDigit = num / 10;
+    int secondDigit = num % 10;
+    int maxDigit = firstDigit > secondDigit ? firstDigit : secondDigit;
+    return maxDigit;
+}
