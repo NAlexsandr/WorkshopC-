@@ -34,7 +34,6 @@ int y2Coordinate = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите значение z2 для второй точки: ");
 int z2Coordinate = Convert.ToInt32(Console.ReadLine());
 
-
 double distance = Distance(x1Coordinate, y1Coordinate, z1Coordinate, x2Coordinate, y2Coordinate, z2Coordinate);
 double dRound = Math.Round(distance, 2, MidpointRounding.ToZero);
 
