@@ -21,12 +21,13 @@ int[] FillArray(int[] array, int count)
 
 void PrintArray(int[] array)
 {
-    Console.Write("[ " + array[0] + ", ");
-    for (int i = 1; i < array.Length; i++)
+    Console.Write("[" + array[0] + ", ");
+    int j = array.Length;
+    for (int i = 1; i < array.Length - 1; i++)
     {
         Console.Write(array[i] + ", ");
     }
-    Console.Write("]");
+    Console.Write(array[j - 1] + "]");
 }
 
 int i = Promp("Введите длину массива: ");
