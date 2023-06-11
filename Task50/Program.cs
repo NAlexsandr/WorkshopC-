@@ -21,18 +21,18 @@ else
     Console.Write("-> Такого элемента в двухмерном массиве нет ");
 }
 
-int[] Promp2Number(string message)                                   // Принимает два числа с консоли, написанные через пробел или запятую
+int[] Promp2Number(string message)                                  // Метод принимает два числа с консоли, написанные через пробел или запятую
 {
     int[] array = new int[2];
     Console.Write(message);
     string value = Console.ReadLine();
-    string[] subs = value.Split(',',' ');                             // Строки разделяются запятой или пробелом
+    string[] subs = value.Split(',',' ');    // Строки разделяются запятой или пробелом
     array[0] = Convert.ToInt32(subs[0]);
     array[1] = Convert.ToInt32(subs[1]);
     return array;
 }
 
-int[,] CreateMatrixRndInt(int rows, int columns, int min, int max) // Заполнение двумерного массива случайными целыми числами
+int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)  // Метод заполняет двумерный массив случайными целыми числами
 {
     //                        0      1      
     int[,] matrix = new int[rows, columns];
@@ -47,7 +47,7 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max) // Запол
     return matrix;
 }
 
-void PrintMatrix(int[,] matrix)                                       // Вывод на экран двухмерного целочисленного массива 
+void PrintMatrix(int[,] matrix)                                       // Метод выводит на экран двухмерный целочисленный массив 
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
