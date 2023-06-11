@@ -9,13 +9,14 @@
 Console.WriteLine("Создаем двухмерный массив: ");                   // Программа   
 int[,] arr = CreateMatrixRndInt(5, 6, 1, 10);            
 PrintMatrix(arr);
-int[] rowscolums = Promp2Number("Введите номер строки и номер столбца через пробел или запятую: ");
-bool find = FindArrayElement (arr, rowscolums[0], rowscolums[1]);
-if (find)
+int[] rowscolums = Promp2Number("Введите номер строки и номер столбца через пробел или запятую: "); // Получаем на входе позицию элемента
+bool find = FindArrayElement (arr, rowscolums[0], rowscolums[1]);                                   // Смотрим, есть ли такая позиция (Да/Нет)
+if (find)                                                                                           // Выводим на экран сообщение
 {
     Console.Write($" -> Значение элемента в двухмерном массиве = {arr[rowscolums[0] - 1, rowscolums[1] - 1]} ");
 }
 else {Console.Write("-> Такого элемента в двухмерном массиве нет ");}
+
 
                                                      // Метод принимает позицию элемента двумерном массиве,
                                                      // и возвращает true (есть такая позиция в массиве) или false (нет такой позиции)
