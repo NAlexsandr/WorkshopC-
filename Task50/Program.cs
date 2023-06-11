@@ -10,15 +10,23 @@ Console.WriteLine("Создаем двухмерный массив: ");        
 int[,] arr = CreateMatrixRndInt(5, 6, 1, 10);            
 PrintMatrix(arr);
 int[] rowscolums = Promp2Number("Введите номер строки и номер столбца через пробел или запятую: ");
-if (rowscolums[0] > 0
-    & rowscolums[0] <= arr.GetLength(0)
-    & rowscolums[1] > 0
-    & rowscolums[1] <= arr.GetLength(1)
-    )
-{ Console.Write($" -> Значение элемента в двухмерном массиве = {arr[rowscolums[0] - 1, rowscolums[1] - 1]} "); }
-else
+bool find = FindArrayElement (arr, rowscolums[0], rowscolums[1]);
+if (find)
 {
-    Console.Write("-> Такого элемента в двухмерном массиве нет ");
+    Console.Write($" -> Значение элемента в двухмерном массиве = {arr[rowscolums[0] - 1, rowscolums[1] - 1]} ");
+}
+else {Console.Write("-> Такого элемента в двухмерном массиве нет ");}
+
+                                                     // Метод принимает позицию элемента двумерном массиве,
+                                                     // и возвращает true (есть такая позиция в массие) или false (нет такой позиции)
+bool FindArrayElement (int[,] arr, int rows, int colums)                                                               
+{ if (rows > 0
+      & rows <= arr.GetLength(0)
+      & colums > 0
+      & colums <= arr.GetLength(1)
+    )
+     return true;
+  else return false;
 }
 
 int[] Promp2Number(string message)                                  // Метод принимает два числа с консоли, написанные через пробел или запятую
