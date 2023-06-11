@@ -5,16 +5,16 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-Console.WriteLine("Создаем двухмерный массив: ");                   // Программа   
-int[,] arr = CreateMatrixRndInt(5, 6, 1, 10);
-PrintMatrix(arr);
+                                                                     // Программа
+Console.WriteLine("Создаем двухмерный массив: ");                      
+int[,] arr = CreateMatrixRndInt(5, 6, 1, 10);                        // Создаем двухмерный массив
+PrintMatrix(arr);                                                    // Выводим двухмерный массив на экран
 Console.WriteLine();
 Console.WriteLine("Среднее арифметическое по столбцам: ");
-double[] AvCol = AverageColums(arr);
+double[] AvCol = AverageColums(arr);                               // Считаем среднее арифметическое по столбцам и записываем в одномерный массив
+PrintArrayDouble(AvCol, 2);                                   // Выводим на экран одномерный массив со среднеарифметическим значениями по столбцам
 
-PrintArrayDouble(AvCol, 2);
-
-double[] AverageColums(int[,] array)                                 // Считает среднее арифметическое столбцов двухмерного массива
+double[] AverageColums(int[,] array)                                 // Метод считает среднее арифметическое столбцов двухмерного массива
 {
     double[] ColAverage = new double[array.GetLength(1)];
     for (int i = 0; i < array.GetLength(1); i++)    // Фиксируем столбец               
