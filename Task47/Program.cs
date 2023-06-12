@@ -19,7 +19,7 @@ double[,] CreateMatrixRndDouble(int rows, int columns, int min, int max) // Со
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-          matrix[i, j] = rnd.NextDouble() * (max + 1 - min) + min; // Вещественное число берется из интервала [min, max]
+            matrix[i, j] = rnd.NextDouble() * (max + 1 - min) + min; // Вещественное число берется из интервала [min, max]
         }
     }
     return matrix;
