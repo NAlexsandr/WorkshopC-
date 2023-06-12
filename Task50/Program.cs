@@ -7,27 +7,28 @@
 // 1, 7 -> такого элемента в массиве нет
 
 Console.WriteLine("Создаем двухмерный массив: ");                   // Программа   
-int[,] arr = CreateMatrixRndInt(5, 6, 1, 10);            
+int[,] arr = CreateMatrixRndInt(5, 6, 1, 10);
 PrintMatrix(arr);
 int[] rowscolums = Promp2Number("Введите номер строки и номер столбца через пробел или запятую: "); // Получаем на входе позицию элемента
-bool find = FindArrayElement (arr, rowscolums[0], rowscolums[1]);                                   // Смотрим, есть ли такая позиция (Да/Нет)
+bool find = FindArrayElement(arr, rowscolums[0], rowscolums[1]);                                   // Смотрим, есть ли такая позиция (Да/Нет)
 if (find)                                                                                           // Выводим на экран сообщение
 {
     Console.Write($" -> Значение элемента в двухмерном массиве = {arr[rowscolums[0] - 1, rowscolums[1] - 1]} ");
 }
-else {Console.Write("-> Такого элемента в двухмерном массиве нет ");}
+else { Console.Write("-> Такого элемента в двухмерном массиве нет "); }
 
 
-                                                     // Метод принимает позицию элемента двумерном массиве,
-                                                     // и возвращает true (есть такая позиция в массиве) или false (нет такой позиции)
-bool FindArrayElement (int[,] arr, int rows, int colums)                                                               
-{ if (rows > 0
-      & rows <= arr.GetLength(0)
-      & colums > 0
-      & colums <= arr.GetLength(1)
+// Метод принимает позицию элемента двумерном массиве,
+// и возвращает true (есть такая позиция в массиве) или false (нет такой позиции)
+bool FindArrayElement(int[,] arr, int rows, int colums)
+{
+    if (rows > 0
+      && rows <= arr.GetLength(0)
+      && colums > 0
+      && colums <= arr.GetLength(1)
     )
-     return true;
-  else return false;
+        return true;
+    else return false;
 }
 
 int[] Promp2Number(string message)                                  // Метод принимает два числа с консоли, написанные через пробел или запятую
@@ -35,7 +36,7 @@ int[] Promp2Number(string message)                                  // Мето�
     int[] array = new int[2];
     Console.Write(message);
     string value = Console.ReadLine();
-    string[] subs = value.Split(',',' ');    // Строки разделяются запятой или пробелом
+    string[] subs = value.Split(',', ' ');    // Строки разделяются запятой или пробелом
     array[0] = Convert.ToInt32(subs[0]);
     array[1] = Convert.ToInt32(subs[1]);
     return array;
