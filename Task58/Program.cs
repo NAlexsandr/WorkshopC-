@@ -8,11 +8,15 @@
 
 // ПРОГРАММА
 
-int[,] array1 = CreateMatrixRndInt(2, 3, 1, 10);  // Создаем 1-й двухмерный массив
-Console.WriteLine("Первая матрица А  ");
+int dimensionA1 = Promp("Введите кол-во строк в первой матрице А: ");
+int dimensionA2 = Promp("Введите кол-во столбцов в первой матрице А: ");
+int[,] array1 = CreateMatrixRndInt(dimensionA1, dimensionA2, 1, 10);  // Создаем 1-й двухмерный массив
+Console.WriteLine("Первая матрица А:  ");
 PrintMatrix(array1);
-int[,] array2 = CreateMatrixRndInt(3, 2, 1, 10);  // Создаем 2-й двухмерный массив
-Console.WriteLine("Вторая матрица Б  ");
+int dimensionB1 = Promp("Введите кол-во строк в первой матрице B: ");
+int dimensionB2 = Promp("Введите кол-во столбцов в первой матрице B: ");
+int[,] array2 = CreateMatrixRndInt(dimensionB1, dimensionB2, 1, 10);  // Создаем 2-й двухмерный массив
+Console.WriteLine("Вторая матрица B:  ");
 PrintMatrix(array2);
 if (array1.GetLength(0) != array2.GetLength(1))    //Проверяем, можно ли эти матрицы перемножать
 {
@@ -77,4 +81,13 @@ void PrintMatrix(int[,] matrix)
         }
         Console.WriteLine();
     }
+}
+
+// Метод печатает сообщение, для получения целого числа
+int Promp(string message)
+{
+    Console.Write(message);
+    string value = Console.ReadLine();
+    int result = Convert.ToInt32(value);
+    return result;
 }
