@@ -46,7 +46,7 @@ void SpiralMatrix(int n, int m, int length, int[,] spiral)
             spiral[n + length - 1 - i, m] = counter; 
             counter++;
         }
-        SpiralMatrix(n + 1, m + 1, length - 2, spiral);
+        SpiralMatrix(n + 1, m + 1, length - 2, spiral);                      // Рекурсия
     }
     else return;
 
