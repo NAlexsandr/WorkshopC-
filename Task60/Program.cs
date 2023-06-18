@@ -11,7 +11,7 @@ PrintArray3d(array3d);
 
 
 // Метод: Создается целочисленный трехмерный массив с заданными параметрами (кол-во строк, кол-во столбцов)
-int[,,] CreateArray3dRndInt(int x, int y, int z) // rows = 3, columns = 4 Создание двумерного массива случайными целыми числами
+int[,,] CreateArray3dRndInt(int x, int y, int z)
 {
     //                        0      1      
     int[,,] array3d = new int[x, y, z];
